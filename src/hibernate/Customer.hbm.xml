@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 18, 2015 8:03:01 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.nextop.webapp.entities.Customer" table="customer" catalog="sales" optimistic-lock="version">
+        <id name="customerId" type="java.lang.Integer">
+            <column name="customerID" />
+            <generator class="identity" />
+        </id>
+        <property name="countryId" type="int">
+            <column name="countryID" not-null="true" />
+        </property>
+        <property name="customerName" type="string">
+            <column name="customer_name" length="50" not-null="true" />
+        </property>
+        <property name="username" type="string">
+            <column name="username" length="20" not-null="true" unique="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="32" not-null="true" />
+        </property>
+        <property name="birthDate" type="timestamp">
+            <column name="birth_date" length="19" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="11" unique="true" />
+        </property>
+        <property name="isOnline" type="java.lang.Boolean">
+            <column name="isOnline" />
+        </property>
+    </class>
+</hibernate-mapping>

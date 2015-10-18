@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 18, 2015 8:03:01 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.nextop.webapp.entities.Shippers" table="shippers" catalog="sales" optimistic-lock="version">
+        <id name="shipperId" type="java.lang.Integer">
+            <column name="shipperID" />
+            <generator class="identity" />
+        </id>
+        <property name="countryId" type="java.lang.Integer">
+            <column name="countryID" />
+        </property>
+        <property name="shipperName" type="string">
+            <column name="shipper_name" length="100" not-null="true" />
+        </property>
+        <property name="birthDate" type="timestamp">
+            <column name="birth_date" length="19" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="11" />
+        </property>
+        <property name="image" type="string">
+            <column name="image" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

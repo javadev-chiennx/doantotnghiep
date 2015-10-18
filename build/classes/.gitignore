@@ -1,0 +1,11 @@
+/application.properties
+/application_ja.properties
+/application_vi.properties
+/com/
+/hibernate/
+/hibernate.cfg.xml
+/hibernate.properties
+/hibernate.reveng.xml
+/log4j.properties
+/struts.properties
+/struts.xml

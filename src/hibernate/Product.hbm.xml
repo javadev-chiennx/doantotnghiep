@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 18, 2015 8:03:01 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.nextop.webapp.entities.Product" table="product" catalog="sales" optimistic-lock="version">
+        <id name="productId" type="java.lang.Integer">
+            <column name="productID" />
+            <generator class="identity" />
+        </id>
+        <property name="productName" type="string">
+            <column name="product_name" not-null="true" />
+        </property>
+        <property name="categoryId" type="int">
+            <column name="categoryID" not-null="true" />
+        </property>
+        <property name="supplierId" type="int">
+            <column name="supplierID" not-null="true" />
+        </property>
+        <property name="purchasePrice" type="java.lang.Float">
+            <column name="purchase_price" precision="12" scale="0" />
+        </property>
+        <property name="salePrice" type="java.lang.Float">
+            <column name="sale_price" precision="12" scale="0" />
+        </property>
+        <property name="productDate" type="java.util.Date">
+            <column name="product_date" length="19" />
+        </property>
+        <property name="quantity" type="java.lang.Short">
+            <column name="quantity" />
+        </property>
+        <property name="color" type="string">
+            <column name="color" length="30" />
+        </property>
+        <property name="img" type="string">
+            <column name="img" />
+        </property>
+        <property name="guaranteeTime" type="string">
+            <column name="guarantee_time" length="50" />
+        </property>
+        <property name="status" type="java.lang.Boolean">
+            <column name="status" />
+        </property>
+        <property name="isSpecifial" type="java.lang.Boolean">
+            <column name="isSpecifial" />
+        </property>
+    </class>
+</hibernate-mapping>

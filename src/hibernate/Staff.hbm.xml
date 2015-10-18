@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 18, 2015 8:03:01 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+	<class catalog="sales" name="com.nextop.webapp.entities.Staff"
+		table="staff" optimistic-lock="version">
+		<id name="staffId" type="java.lang.Integer">
+			<column name="staffID" />
+			<generator class="identity" />
+		</id>
+		<property generated="never" lazy="false" name="countryId"
+			type="int">
+			<column name="countryID" not-null="true" />
+		</property>
+		<property generated="never" lazy="false" name="fullname"
+			type="string">
+			<column length="50" name="fullname" not-null="true" />
+		</property>
+		<property generated="never" lazy="false" name="username"
+			type="string">
+			<column length="32" name="username" unique="true" />
+		</property>
+		<property generated="never" lazy="false" name="password"
+			type="string">
+			<column length="20" name="password" />
+		</property>
+		<property generated="never" lazy="false" name="idCardNumber"
+			type="string">
+			<column length="9" name="id_card_number" />
+		</property>
+		<property generated="never" lazy="false" name="birthDate"
+			type="java.util.Date">
+			<column length="19" name="birth_date" />
+		</property>
+		<property generated="never" lazy="false" name="address" type="string">
+			<column name="address" not-null="true" />
+		</property>
+		<property generated="never" lazy="false" name="email" type="string">
+			<column length="100" name="email" />
+		</property>
+		<property generated="never" lazy="false" name="phone" type="string">
+			<column length="11" name="phone" unique="true" />
+		</property>
+		<property generated="never" lazy="false" name="image" type="string">
+			<column length="100" name="image" />
+		</property>
+		<property generated="never" lazy="false" name="isAdmin"
+			type="java.lang.Boolean">
+			<column name="is_admin" />
+		</property>
+	</class>
+</hibernate-mapping>

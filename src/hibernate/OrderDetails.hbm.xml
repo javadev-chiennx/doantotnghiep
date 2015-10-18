@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 18, 2015 8:03:01 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.nextop.webapp.entities.OrderDetails" table="order_details" catalog="sales" optimistic-lock="version">
+        <id name="orderDetailsId" type="int">
+            <column name="order_detailsID" />
+            <generator class="assigned" />
+        </id>
+        <property name="orderId" type="int">
+            <column name="orderID" not-null="true" />
+        </property>
+        <property name="productId" type="int">
+            <column name="productID" not-null="true" />
+        </property>
+        <property name="quantity" type="byte">
+            <column name="quantity" not-null="true" />
+        </property>
+        <property name="price" type="float">
+            <column name="price" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="totalMoney" type="java.lang.Float">
+            <column name="total_money" precision="12" scale="0" />
+        </property>
+        <property name="unit" type="string">
+            <column name="unit" length="30" />
+        </property>
+    </class>
+</hibernate-mapping>

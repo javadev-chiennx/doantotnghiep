@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 18, 2015 8:03:01 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.nextop.webapp.entities.Country" table="country" catalog="sales" optimistic-lock="version">
+        <id name="countryId" type="java.lang.Integer">
+            <column name="countryID" />
+            <generator class="identity" />
+        </id>
+        <property name="countryCode" type="string">
+            <column name="country_code" length="5" />
+        </property>
+        <property name="countryName" type="string">
+            <column name="country_name" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
