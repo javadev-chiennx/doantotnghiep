@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.action.extension" value="html" /><!-- them duoi html -->
+	<constant name="struts.custom.i18n.resources" value="application" />
+	<package name="default" extends="struts-default" namespace="/">
+		<action name="index" class="com.nextop.webapp.action.CustomerAction">
+			<result name="success">/WEB-INF/webapp/view/jsp/customer/home.jsp</result>
+		</action>
+
+		<action name="locale" class="com.nextop.webapp.action.CustomerAction"
+			method="switchLocale">
+			<result name="success" type="redirect">index.html</result>
+		</action>
+
+		<action name="loginCustomer" class="com.nextop.webapp.action.CustomerAction"
+			method="login">
+			<result name="success" type="redirect">index.html</result>
+			<result name="error" type="redirect">index.html</result>
+		</action>
+
+		<action name="login" class="com.nextop.webapp.action.StaffAction"
+			method="execute">
+			<result name="success">/WEB-INF/webapp/view/jsp/administrator/login.jsp
+			</result>
+		</action>
+
+		<action name="accountLogin" class="com.nextop.webapp.action.StaffAction"
+			method="authenticate">
+			<result name="success">/WEB-INF/webapp/view/jsp/administrator/main.jsp
+			</result>
+			<result name="error" type="redirect">login.html</result>
+		</action>
+
+		<action name="logout">
+			<result name="success" type="redirect">login.html</result>
+		</action>
+
+		<action name="listProduct" class="com.nextop.webapp.action.ProductAction"
+			method="listProducts">
+			<result name="success">/WEB-INF/webapp/view/jsp/administrator/listProduct.jsp
+			</result>
+		</action>
+
+		<action name="listSupplies" class="com.nextop.webapp.action.SupplierAction"
+			method="listSuppelies">
+			<result name="success">/WEB-INF/webapp/view/jsp/administrator/listSupplies.jsp
+			</result>
+		</action>
+
+		<action name="listStaff" class="com.nextop.webapp.action.StaffAction"
+			method="listEmployees">
+			<result name="success">/WEB-INF/webapp/view/jsp/administrator/listEmployee.jsp
+			</result>
+		</action>
+
+		<action name="listCustomer" class="com.nextop.webapp.action.CustomerAction"
+			method="listCustomer">
+			<result name="success">/WEB-INF/webapp/view/jsp/administrator/listCustomer.jsp
+			</result>
+		</action>
+
+		<action name="listCountry" class="com.nextop.webapp.action.CountryAction"
+			method="listCountry">
+			<result name="success">/WEB-INF/webapp/view/jsp/administrator/listCountry.jsp
+			</result>
+		</action>
+
+		<action name="listCategory" class="com.nextop.webapp.action.CategoryAction"
+			method="listCountry">
+			<result name="success">/WEB-INF/webapp/view/jsp/administrator/listCatergory.jsp
+			</result>
+		</action>
+
+		<action name="listOrder" class="com.nextop.webapp.action.OrdersAction"
+			method="listOrder">
+			<result name="success">/WEB-INF/webapp/view/jsp/administrator/listOrder.jsp
+			</result>
+		</action>
+
+		<action name="listShipper" class="com.nextop.webapp.action.ShippersAction"
+			method="listShipper">
+			<result name="success">/WEB-INF/webapp/view/jsp/administrator/listShipper.jsp
+			</result>
+		</action>
+
+		<action name="inputSupplier" class="com.nextop.webapp.action.SupplierAction">
+			<result name="input">/WEB-INF/webapp/view/jsp/administrator/addSupplies.jsp
+			</result>
+		</action>
+
+		<action name="inputCategory" class="com.nextop.webapp.action.CategoryAction">
+			<result name="input">/WEB-INF/webapp/view/jsp/administrator/addCatergory.jsp
+			</result>
+		</action>
+
+		<action name="inputCountry" class="com.nextop.webapp.action.CountryAction">
+			<result name="input">/WEB-INF/webapp/view/jsp/administrator/addCountry.jsp
+			</result>
+		</action>
+
+		<action name="inputCustomer" class="com.nextop.webapp.action.CustomerAction"
+			method="inputForm">
+			<result name="input">/WEB-INF/webapp/view/jsp/administrator/addCustomer.jsp
+			</result>
+		</action>
+
+		<action name="inputProduct" class="com.nextop.webapp.action.ProductAction">
+			<result name="input">/WEB-INF/webapp/view/jsp/administrator/addProduct.jsp
+			</result>
+		</action>
+
+		<action name="inputEmp" class="com.nextop.webapp.action.StaffAction"
+			method="inputEmployee">
+			<result name="input">/WEB-INF/webapp/view/jsp/administrator/addEmployee.jsp
+			</result>
+		</action>
+
+		<action name="inputShipp" class="com.nextop.webapp.action.ShippersAction">
+			<result name="input">/WEB-INF/webapp/view/jsp/administrator/addShipper.jsp
+			</result>
+		</action>
+		<action name="addObject" class="com.nextop.webapp.action.SupplierAction"
+			method="addSupplier">
+			<result name="success" type="redirect">listSupplies.html</result>
+		</action>
+
+		<action name="addCategorys" class="com.nextop.webapp.action.CategoryAction"
+			method="addCategory">
+			<result name="success" type="redirect">listCategory.html</result>
+		</action>
+
+		<action name="addCountrys" class="com.nextop.webapp.action.CountryAction"
+			method="addCountry">
+			<result name="success" type="redirect">listCountry.html</result>
+		</action>
+
+		<action name="register" class="com.nextop.webapp.action.CustomerAction"
+			method="addCust">
+			<result name="success" type="redirect">listCustomer.html</result>
+		</action>
+
+		<action name="addPro" class="com.nextop.webapp.action.ProductAction"
+			method="addProducts">
+			<result name="success" type="redirect">listProduct.html</result>
+		</action>
+		<action name="addEmployee" class="com.nextop.webapp.action.StaffAction"
+			method="addStaff">
+			<result name="success" type="redirect">listCustomer.html</result>
+		</action>
+		<action name="addShipp" class="com.nextop.webapp.action.ShippersAction"
+			method="addShipper">
+			<result name="success" type="redirect">listShipper.html</result>
+		</action>
+		<action name="deleteObject" class="com.nextop.webapp.action.SupplierAction"
+			method="deleteSupplier">
+			<result name="success" type="redirect">listSupplies.html</result>
+		</action>
+
+		<action name="deleteCategory" class="com.nextop.webapp.action.CategoryAction"
+			method="deleCategory">
+			<result name="success" type="redirect">listCategory.html</result>
+		</action>
+
+		<action name="deleteCountry" class="com.nextop.webapp.action.CountryAction"
+			method="deleteCount">
+			<result name="success" type="redirect">listCountry.html</result>
+		</action>
+
+		<action name="deleteCustomer" class="com.nextop.webapp.action.CustomerAction"
+			method="deleteCustomer">
+			<result name="success" type="redirect">listCustomer.html</result>
+		</action>
+
+		<action name="deleteProduct" class="com.nextop.webapp.action.ProductAction"
+			method="deleteProduct">
+			<result name="success" type="redirect">listProduct.html</result>
+		</action>
+
+		<action name="search" class="com.nextop.webapp.action.CustomerAction"
+			method="search">
+			<result name="success">/WEB-INF/webapp/view/jsp/customer/home.jsp
+			</result>
+		</action>
+		
+		<action name="findCategory" class="com.nextop.webapp.action.CustomerAction"
+			method="findCategorys">
+			<result name="success">/WEB-INF/webapp/view/jsp/customer/home.jsp
+			</result>
+		</action>
+		
+		<action name="findSupplies" class="com.nextop.webapp.action.CustomerAction"
+			method="findSupplies">
+			<result name="success">/WEB-INF/webapp/view/jsp/customer/home.jsp
+			</result>
+		</action>
+		<action name="findPrice" class="com.nextop.webapp.action.CustomerAction"
+			method="findByPrices">
+			<result name="success">/WEB-INF/webapp/view/jsp/customer/home.jsp
+			</result>
+		</action>
+		<action name="productDetails" method="findById" class="com.nextop.webapp.action.CustomerAction">
+			<result name="success">/WEB-INF/webapp/view/jsp/customer/home.jsp
+			</result>
+		</action>
+		
+		
+	</package>
+</struts>

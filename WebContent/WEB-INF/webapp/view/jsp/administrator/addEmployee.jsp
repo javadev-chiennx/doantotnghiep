@@ -21,11 +21,11 @@
 			<s:textfield name="staff.idCardNumber" label="idCardNumber" />
 			<s:textfield name="staff.countryId" label="Country ID" />
 			<sd:datetimepicker name="staff.birthDate" label="Birth date"
-				displayFormat="dd/MM/yyyy" />
+				displayFormat="dd/MM/yyyy" value="today"/>
 			<s:textfield name="staff.address" label="Address" />
 			<s:textfield name="staff.email" label="Email" />
 			<s:textfield name="staff.phone" label="Phone" />
-			<s:textfield name="staff.image" label="Images" />
+			<s:textfield name="staff.image" label="Images" value="today" />
 			<s:radio label="Is admin" name="staff.isAdmin"
 				list="#{'true':'Yes','false':'No'}" value="" />
 			<s:submit value="Submit" />
