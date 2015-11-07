@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.action.extension" value="html" />
+	<constant name="struts.custom.i18n.resources" value="application" />
+	<package name="default" extends="struts-default" namespace="/">
+		<action name="listCategory" class="com.nextop.webapp.action.CategoryAction"
+			method="listCountry">
+			<result name="success">/WEB-INF/webapp/view/jsp/administrator/listCatergory.jsp
+			</result>
+		</action>
+		<action name="inputCategory" class="com.nextop.webapp.action.CategoryAction">
+			<result name="input">/WEB-INF/webapp/view/jsp/administrator/addCatergory.jsp
+			</result>
+		</action>
+		<action name="addCategorys" class="com.nextop.webapp.action.CategoryAction"
+			method="addCategory">
+			<result name="success" type="redirect">listCategory.html</result>
+		</action>
+		<action name="deleteCategory" class="com.nextop.webapp.action.CategoryAction"
+			method="deleCategory">
+			<result name="success" type="redirect">listCategory.html</result>
+		</action>
+	</package>
+</struts>

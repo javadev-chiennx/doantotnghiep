@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.action.extension" value="html" />
+	<constant name="struts.custom.i18n.resources" value="application" />
+	<package name="default" extends="struts-default" namespace="/">
+		<action name="listCountry" class="com.nextop.webapp.action.CountryAction"
+			method="listCountry">
+			<result name="success">/WEB-INF/webapp/view/jsp/administrator/listCountry.jsp
+			</result>
+		</action>
+		<action name="inputCountry" class="com.nextop.webapp.action.CountryAction">
+			<result name="input">/WEB-INF/webapp/view/jsp/administrator/addCountry.jsp
+			</result>
+		</action>
+		<action name="addCountrys" class="com.nextop.webapp.action.CountryAction"
+			method="addCountry">
+			<result name="success" type="redirect">listCountry.html</result>
+		</action>
+		<action name="deleteCountry" class="com.nextop.webapp.action.CountryAction"
+			method="deleteCount">
+			<result name="success" type="redirect">listCountry.html</result>
+		</action>
+	</package>
+</struts>

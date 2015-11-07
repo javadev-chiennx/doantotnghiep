@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.action.extension" value="html" /><!-- them duoi html -->
+	<constant name="struts.custom.i18n.resources" value="application" />
+	<package name="default" extends="struts-default" namespace="/">
+		<action name="index" class="com.nextop.webapp.action.CustomerAction">
+			<result name="success">/WEB-INF/webapp/view/jsp/customer/home.jsp</result>
+		</action>
+
+		<action name="locale" class="com.nextop.webapp.action.CustomerAction"
+			method="switchLocale">
+			<result name="success" type="redirect">index.html</result>
+		</action>
+
+		<action name="loginCustomer" class="com.nextop.webapp.action.CustomerAction"
+			method="login">
+			<result name="success" type="redirect">index.html</result>
+			<result name="error" type="redirect">index.html</result>
+		</action>
+		<action name="listCustomer" class="com.nextop.webapp.action.CustomerAction"
+			method="listCustomer">
+			<result name="success">/WEB-INF/webapp/view/jsp/administrator/listCustomer.jsp
+			</result>
+		</action>
+		<action name="inputCustomer" class="com.nextop.webapp.action.CustomerAction"
+			method="inputForm">
+			<result name="input">/WEB-INF/webapp/view/jsp/administrator/addCustomer.jsp
+			</result>
+		</action>
+		<action name="register" class="com.nextop.webapp.action.CustomerAction"
+			method="addCust">
+			<result name="success" type="redirect">listCustomer.html</result>
+		</action>
+		<action name="deleteCustomer" class="com.nextop.webapp.action.CustomerAction"
+			method="deleteCustomer">
+			<result name="success" type="redirect">listCustomer.html</result>
+		</action>
+
+		<action name="deleteProduct" class="com.nextop.webapp.action.ProductAction"
+			method="deleteProduct">
+			<result name="success" type="redirect">listProduct.html</result>
+		</action>
+
+		<action name="search" class="com.nextop.webapp.action.CustomerAction"
+			method="search">
+			<result name="success">/WEB-INF/webapp/view/jsp/customer/home.jsp
+			</result>
+		</action>
+		
+		<action name="findCategory" class="com.nextop.webapp.action.CustomerAction"
+			method="findCategorys">
+			<result name="success">/WEB-INF/webapp/view/jsp/customer/home.jsp
+			</result>
+		</action>
+		
+		<action name="findSupplies" class="com.nextop.webapp.action.CustomerAction"
+			method="findSupplies">
+			<result name="success">/WEB-INF/webapp/view/jsp/customer/home.jsp
+			</result>
+		</action>
+		<action name="findPrice" class="com.nextop.webapp.action.CustomerAction"
+			method="findByPrices">
+			<result name="success">/WEB-INF/webapp/view/jsp/customer/home.jsp
+			</result>
+		</action>
+		<action name="productDetails" method="findById" class="com.nextop.webapp.action.CustomerAction">
+			<result name="success">/WEB-INF/webapp/view/jsp/customer/home.jsp
+			</result>
+		</action>
+		
+		
+	</package>
+</struts>
