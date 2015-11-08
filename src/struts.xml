@@ -6,6 +6,8 @@
 	<constant name="struts.devMode" value="true" />
 	<constant name="struts.action.extension" value="html" />
 	<constant name="struts.custom.i18n.resources" value="application" />
+	<package name="default" namespace="/" extends="struts-default">
+	</package>
 	<include file="com/nextop/webapp/config/category.xml" />
 	<include file="com/nextop/webapp/config/country.xml" />
 	<include file="com/nextop/webapp/config/customer.xml" />

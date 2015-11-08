@@ -116,7 +116,7 @@ public class CustomerAction extends ActionSupport implements
 	public String execute() throws Exception {
 
 		this.products = daoImpl.listAll();
-		totalRecord = products.size();// lay tong so ban ghi trong db = 37
+		totalRecord = products.size();// lay tong so ban ghi trong db
 		if (totalRecord % IConstant.RECORD_PER_PAGE != 0)
 			totalPage = totalRecord / IConstant.RECORD_PER_PAGE + 1;
 		else
@@ -126,11 +126,8 @@ public class CustomerAction extends ActionSupport implements
 		} else {
 			currentPage = Integer.valueOf(request.getParameter("currentPage"));
 		}
-
-		products.clear();// clear list
-		this.products = daoImpl.getElementByPage(currentPage);// lay ra so ban
-																// ghi cua tung
-																// trang
+		products.clear();
+		this.products = daoImpl.getElementByPage(currentPage);
 		return SUCCESS;
 	}
 
