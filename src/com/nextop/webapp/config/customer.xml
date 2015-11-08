@@ -7,10 +7,6 @@
 	<constant name="struts.action.extension" value="html" />
 	<constant name="struts.custom.i18n.resources" value="application" />
 	<package name="default" extends="struts-default" namespace="/">
-		<action name="index" class="com.nextop.webapp.action.CustomerAction">
-			<result name="success">/WEB-INF/webapp/view/jsp/customer/home.jsp
-			</result>
-		</action>
 		<action name="locale" class="com.nextop.webapp.action.CustomerAction"
 			method="switchLocale">
 			<result name="success" type="redirect">index.html</result>

@@ -7,13 +7,17 @@
 	<constant name="struts.action.extension" value="html" />
 	<constant name="struts.custom.i18n.resources" value="application" />
 	<package name="default" namespace="/" extends="struts-default">
+		<action name="index" class="com.nextop.webapp.action.CustomerAction">
+			<result name="success">/WEB-INF/webapp/view/jsp/customer/home.jsp
+			</result>
+		</action>
 	</package>
-	<include file="com/nextop/webapp/config/category.xml" />
-	<include file="com/nextop/webapp/config/country.xml" />
 	<include file="com/nextop/webapp/config/customer.xml" />
 	<include file="com/nextop/webapp/config/order.xml" />
 	<include file="com/nextop/webapp/config/product.xml" />
 	<include file="com/nextop/webapp/config/shipper.xml" />
 	<include file="com/nextop/webapp/config/staff.xml" />
 	<include file="com/nextop/webapp/config/supplier.xml" />
+	<include file="com/nextop/webapp/config/category.xml" />
+	<include file="com/nextop/webapp/config/country.xml" />
 </struts>
