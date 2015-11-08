@@ -6,7 +6,7 @@
 	<constant name="struts.devMode" value="true" />
 	<constant name="struts.action.extension" value="html" />
 	<constant name="struts.custom.i18n.resources" value="application" />
-	<package name="default" namespace="/" extends="struts-default">
+	<package name="default" namespace="/index" extends="struts-default">
 		<action name="index" class="com.nextop.webapp.action.CustomerAction">
 			<result name="success">/WEB-INF/webapp/view/jsp/customer/home.jsp
 			</result>
